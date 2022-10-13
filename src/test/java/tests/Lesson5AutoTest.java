@@ -18,31 +18,31 @@ public class Lesson5AutoTest {
         driver = new ChromeDriver();
     }
     @Test
-    public void OverweightTest(){
+    public void checkOverweightCaseTest(){
         driver.get("https://healthunify.com/bmicalculator/");
         driver.findElement(By.xpath("//input[@name= 'wg']")).sendKeys("65");
         driver.findElement(By.xpath("//input[@name= 'ht']")).sendKeys("155");
         driver.findElement(By.xpath("//input[@value= 'Calculate']")).click();
-        String OverweightText = driver.findElement(By.xpath("//input[@name='desc']")).getAttribute("value");
-        Assert.assertEquals(OverweightText, "Your category is Overweight");
+        String overweightText = driver.findElement(By.xpath("//input[@name='desc']")).getAttribute("value");
+        Assert.assertEquals(overweightText, "Your category is Overweight");
     }
     @Test
-    public void NormalTest(){
+    public void checkNormalweightCaseTest(){
         driver.get("https://healthunify.com/bmicalculator/");
         driver.findElement(By.xpath("//input[@name= 'wg']")).sendKeys("50");
         driver.findElement(By.xpath("//input[@name= 'ht']")).sendKeys("155");
         driver.findElement(By.xpath("//input[@value= 'Calculate']")).click();
-        String NormalText = driver.findElement(By.xpath("//input[@name='desc']")).getAttribute("value");
-        Assert.assertEquals(NormalText, "Your category is Normal");
+        String normalText = driver.findElement(By.xpath("//input[@name='desc']")).getAttribute("value");
+        Assert.assertEquals(normalText, "Your category is Normal");
     }
     @Test
-    public void UnderweightTest(){
+    public void checkUnderweightCaseTest(){
         driver.get("https://healthunify.com/bmicalculator/");
         driver.findElement(By.xpath("//input[@name= 'wg']")).sendKeys("40");
         driver.findElement(By.xpath("//input[@name= 'ht']")).sendKeys("155");
         driver.findElement(By.xpath("//input[@value= 'Calculate']")).click();
-        String UnderweightText = driver.findElement(By.xpath("//input[@name='desc']")).getAttribute("value");
-        Assert.assertEquals(UnderweightText, "Your category is Underweight");
+        String underweightText = driver.findElement(By.xpath("//input[@name='desc']")).getAttribute("value");
+        Assert.assertEquals(underweightText, "Your category is Underweight");
     }
 
     @AfterClass
